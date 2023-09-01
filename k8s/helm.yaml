@@ -1,0 +1,16 @@
+app:
+  name: template-service
+  platform: default
+  image: registry.gitlab.com/owlebot/docker-registry/template-service
+  replicas: 1
+
+ingress:
+  enabled: false
+
+health:
+  enabled: true
+  endpoint: "/health"
+
+infisical:
+  path: /template-service
+  env: prod

@@ -1,0 +1,55 @@
+name: Deploy
+
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+      - src/**
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yaml  # use the callable tests job to run tests
+    secrets:
+      SSH_GITHUB_KEY: ${{ secrets.SSH_GITHUB_KEY }}
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.name != 'main'
+    needs: [test]
+    steps:
+      - name: Login to GitLab
+        uses: docker/login-action@v2
+        with:
+          registry: registry.gitlab.com
+          username: ${{ secrets.GITLAB_USERNAME }}
+          password: ${{ secrets.GITLAB_PASSWORD }}
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: registry.gitlab.com/owlebot/docker-registry/${{ github.event.repository.name }}:latest
+  deploy:
+    strategy:
+      matrix:
+        node-version: [18.x]
+    runs-on: ubuntu-latest
+    if: github.event.repository.name != 'main'
+    needs: [test, build]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.0
+      - name: Install dependencies
+        run: yarn install
+        env:
+          CI: true
+      - name: Deploy to cluster
+        run: yarn deploy

@@ -1,0 +1,36 @@
+name: Test
+
+on: 
+  push:
+  workflow_call:
+    secrets:
+      SSH_GITHUB_KEY:
+        required: false
+
+# Add PUBLIC_KEY to shared account "owle-bot" as a ssh keys
+# Add PRIVATE_KEY to CI as SSH_GITHUB_KEY
+
+jobs:
+  lint-js:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        continue-on-error: true
+        with:
+          known_hosts: unnecessary
+          key: ${{ secrets.SSH_GITHUB_KEY }}
+      - name: Install dependencies
+        run: yarn install
+        env:
+          CI: true
+      - name: Lint
+        run: yarn test

@@ -1,0 +1,44 @@
+{
+	"name": "@owlebot/template-service",
+	"version": "0.1.0",
+	"description": "Owlebot service template.",
+	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
+	"link": "https://github.com/owlebot/template-service",
+	"main": "./src/index.js",
+	"type": "module",
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"private": true,
+	"dependencies": {
+		"@owlebot/lib": "^0.2.0",
+		"@owlebot/logger": "^0.2.0"
+	},
+	"devDependencies": {
+		"@owlebot/cli": "^0.5.0",
+		"@owlebot/eslint-config": "^1.0.0",
+		"eslint": "^8.33.0"
+	},
+	"scripts": {
+		"deploy": "deploy",
+		"docker:build": "docker-build",
+		"docker:push": "docker-push",
+		"lint": "eslint src/**/*.js",
+		"secret:pull": "secret-pull",
+		"start:debug": "launch src/index.js --inspect",
+		"start:prod": "node src/index.js",
+		"start:watch": "launch src/index.js --watch",
+		"start": "launch src/index.js",
+		"test": "yarn run lint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/owlebot/template-service.git"
+	},
+	"bugs": {
+		"url": "https://github.com/owlebot/template-service/issues"
+	},
+	"homepage": "https://github.com/owlebot/template-service#readme",
+	"keywords": []
+}
