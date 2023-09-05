@@ -6,10 +6,10 @@ WORKDIR /app
 COPY package.json ./
 COPY yarn.lock ./
 
-RUN yarn install --prod
+RUN yarn install --prod --network-concurrency 1
 
 # Stage 2: Final image with code and installed dependencies
-FROM node:latest AS final
+FROM node:18 AS final
 
 WORKDIR /app
 
