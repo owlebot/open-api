@@ -1,16 +1,17 @@
 app:
-  name: template-service
+  name: open-api
   platform: default
-  image: registry.gitlab.com/owlebot/docker-registry/template-service
+  image: registry.gitlab.com/owlebot/docker-registry/open-api
   replicas: 1
 
 ingress:
-  enabled: false
+  enabled: true
+  host: api.owle.bot
 
 health:
   enabled: true
   endpoint: "/health"
 
 infisical:
-  path: /template-service
+  path: /open-api
   env: prod

@@ -1,9 +1,9 @@
 {
-	"name": "@owlebot/template-service",
+	"name": "@owlebot/open-api",
 	"version": "0.1.0",
-	"description": "Owlebot service template.",
+	"description": "Owlebot open API.",
 	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
-	"link": "https://github.com/owlebot/template-service",
+	"link": "https://github.com/owlebot/open-api",
 	"main": "./src/index.js",
 	"type": "module",
 	"license": "MIT",
@@ -34,11 +34,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/owlebot/template-service.git"
+		"url": "git+https://github.com/owlebot/open-api.git"
 	},
 	"bugs": {
-		"url": "https://github.com/owlebot/template-service/issues"
+		"url": "https://github.com/owlebot/open-api/issues"
 	},
-	"homepage": "https://github.com/owlebot/template-service#readme",
+	"homepage": "https://github.com/owlebot/open-api#readme",
 	"keywords": []
 }
