@@ -1,34 +1,41 @@
   {
-	"compilerOptions": {
-		"target": "ES2020",
-		"module": "ES2020",
-		"moduleResolution": "node16",
-		"lib": [
-			"es2017",
-			"es7",
-			"es6"
-		],
-		"outDir": "./build",
-		"declaration": true,
-		"strict": true,
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"strictPropertyInitialization": false,
-		"resolveJsonModule": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"sourceMap": true
-	},
-	"include": [
-		"**/*"
-	],
-	"exclude": [
-		"node_modules",
-		"build",
-		"test",
-		"testing",
-		"scripts",
-		"examples",
-		"docs"
-	]
-}
+    "compilerOptions": {
+      "incremental": true,
+      "target": "es6",
+      "module": "es2020",
+      "outDir": "build",
+
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+
+        "moduleResolution": "node10",
+      "baseUrl": ".",
+      "esModuleInterop": true,
+
+      "experimentalDecorators": true,
+
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+      "**/*",
+      "./decs.d.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "build",
+      "test",
+      "testing",
+      "scripts",
+      "examples",
+      "docs"
+    ]
+  }

@@ -5,8 +5,8 @@
 	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
 	"link": "https://github.com/owlebot/open-api",
 	"main": "./src/index.js",
-	"type": "module",
 	"license": "MIT",
+  "type": "module",
 	"engines": {
 		"node": ">=18.0.0"
 	},
@@ -26,8 +26,10 @@
 	},
 	"scripts": {
     "lint": "eslint src/**/*.ts",
-		"clean": "rm -rf build",
-		"build": "tsc",
+		"clean": "rm -rf build spec",
+		"build": "yarn build:tsoa && yarn build:ts",
+		"build:ts": "tsc --experimentalDecorators",
+		"build:tsoa": "yarn run tsoa spec-and-routes",
 		"deploy": "deploy",
 		"docker:build": "docker-build",
 		"docker:push": "docker-push",
@@ -35,7 +37,7 @@
 		"start:debug": "launch src/index.js --inspect",
 		"start:prod": "node src/index.js",
 		"start:watch": "launch src/index.js --watch",
-		"start": "launch src/index.js",
+		"start": "launch build/src/index.js",
 		"test": "yarn run lint"
 	},
 	"repository": {
