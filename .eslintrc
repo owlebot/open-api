@@ -1,6 +1,33 @@
 {
 	"extends": ["@owlebot/eslint-config"],
-	"rules": {
-		"no-magic-numbers": "off"
-	  }
+	"overrides": [
+		{
+			"files": ["*.{ts,tsx}"],
+			"parser": "@typescript-eslint/parser",
+			"plugins": ["@typescript-eslint"],
+			"extends": ["plugin:@typescript-eslint/recommended", "@owlebot/eslint-config"],
+			"rules": {
+				"no-magic-numbers": "off",
+				"new-cap": "off",
+				"import/extensions": [
+					"error",
+					"always"
+				],
+				"indent": "off",
+				"@typescript-eslint/indent": [
+					"error",
+					"tab",
+					{
+						"SwitchCase": 1,
+						"MemberExpression": 1,
+						"ignoredNodes": [
+							"FunctionExpression > .params[decorators.length > 0]",
+							"FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+							"ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+						]
+					}
+				]
+			}
+		}
+	]
 }

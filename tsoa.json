@@ -1,0 +1,13 @@
+// tsoa.json
+{
+  "entryFile": "build/src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["build/src/**/*.route.ts"],
+  "spec": {
+    "outputDirectory": "build/tsoa",
+    "specVersion": 3
+  },
+  "routes": {
+    "routesDir": "build"
+  }
+}
