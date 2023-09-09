@@ -1,7 +1,8 @@
 secret.json
 
-# Open api
+# ts things
 spec/
+build/
 
 # Logs
 logs

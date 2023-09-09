@@ -2,7 +2,7 @@
     "compilerOptions": {
       "incremental": true,
       "target": "es6",
-      "module": "es2020",
+      "module": "esnext",
       "outDir": "build",
 
       "strict": true,
@@ -17,13 +17,14 @@
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
 
-        "moduleResolution": "node10",
+      "moduleResolution": "node10",
       "baseUrl": ".",
       "esModuleInterop": true,
 
       "experimentalDecorators": true,
 
-      "forceConsistentCasingInFileNames": true
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true
     },
     "include": [
       "**/*",

@@ -24,7 +24,7 @@ export class UsersController extends Controller {
     return this.usersService.get(userId);
   }
 
-  @SuccessResponse("201", "Created") // Custom success response
+  @SuccessResponse("201", "User created") // Custom success response
   @Post()
   public async createUser(
     @Body() requestBody: AccountCreationParams
