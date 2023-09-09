@@ -1,5 +1,8 @@
 secret.json
 
+# Open api
+spec/
+
 # Logs
 logs
 *.log
