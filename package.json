@@ -6,7 +6,7 @@
 	"link": "https://github.com/owlebot/open-api",
 	"main": "./src/index.js",
 	"license": "MIT",
-  "type": "module",
+	"type": "module",
 	"engines": {
 		"node": ">=18.0.0"
 	},
@@ -21,15 +21,19 @@
 		"@owlebot/eslint-config": "^1.0.0",
 		"@types/express": "^4.17.17",
 		"@types/node": "^20.6.0",
+		"concurrently": "^8.2.1",
 		"eslint": "^8.33.0",
+		"nodemon": "^3.0.1",
+		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2"
 	},
 	"scripts": {
-    "lint": "eslint src/**/*.ts",
+		"lint": "eslint src/**/*.ts",
 		"clean": "rm -rf build spec",
 		"build": "yarn build:tsoa && yarn build:ts",
 		"build:ts": "tsc --experimentalDecorators",
 		"build:tsoa": "yarn run tsoa spec-and-routes",
+		"dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
 		"deploy": "deploy",
 		"docker:build": "docker-build",
 		"docker:push": "docker-push",
