@@ -1,5 +1,9 @@
 secret.json
 
+# ts things
+spec/
+build/
+
 # Logs
 logs
 *.log

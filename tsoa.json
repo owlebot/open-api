@@ -1,0 +1,17 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*.route.ts"],
+  "spec": {
+    "outputDirectory": "spec/tsoa",
+    "host": "localhost:3000",
+    "basePath": "v1",
+    "yaml": false,
+    "specVersion": 3
+  },
+  "routes": {
+    "esm": true,
+    "basePath": "v1",
+    "routesDir": "build"
+  }
+}
