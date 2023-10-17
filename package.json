@@ -12,11 +12,11 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@owlebot/lib": "^0.2.0",
-		"@owlebot/logger": "^0.2.0"
+		"@owlebot/lib": "^0.3.0",
+		"@owlebot/logger": "^0.3.0"
 	},
 	"devDependencies": {
-		"@owlebot/cli": "^0.5.0",
+		"@owlebot/cli": "^0.6.0",
 		"@owlebot/eslint-config": "^1.0.0",
 		"eslint": "^8.33.0"
 	},
