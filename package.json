@@ -12,8 +12,8 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@owlebot/lib": "^0.3.0",
-		"@owlebot/logger": "^0.3.0",
+		"@owlebot/lib": "^0.4.0",
+		"@owlebot/logger": "^0.4.0",
 		"swagger-ui-express": "^5.0.0",
 		"tsoa": "^5.1.1"
 	},
@@ -42,7 +42,7 @@
 		"secret:pull": "secret-pull",
 		"start:debug": "launch src/index.js --inspect",
 		"start:prod": "node src/index.js",
-		"start:watch": "launch src/index.js --watch",
+		"start:watch": "NODE-OPTIONS='--watch' ts-node --esm --swc build/src/index.js",
 		"start": "launch build/src/index.js",
 		"test": "yarn run lint"
 	},

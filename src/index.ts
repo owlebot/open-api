@@ -15,7 +15,7 @@ import { RegisterRoutes } from "../build/routes.js";
 Logger.create("open-api");
 
 const server = new Server();
-server.init();
+server.init(process.env.OPEN_API_PORT);
 server.addLogger(Logger);
 // server.addHealthEndpoint();
 
@@ -30,4 +30,4 @@ server.app.use("/api/v1", swaggerUi.serve, async (_req: ExRequest, res: ExRespon
   );
 });
 
-server.start(process.env.OPEN_API_PORT || 3000);
+server.start();
