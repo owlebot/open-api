@@ -1,4 +1,4 @@
-import { Server } from "@owlebot/lib";
+import { Server } from "@owlebot/lib/server";
 import { Logger } from "@owlebot/logger";
 
 import express, { Response as ExResponse, Request as ExRequest } from "express";
