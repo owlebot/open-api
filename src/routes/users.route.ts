@@ -7,6 +7,7 @@ import {
   Post,
   Query,
   Route,
+  Request,
   SuccessResponse,
   Security,
 } from "tsoa";
@@ -29,11 +30,12 @@ export class UsersController extends Controller {
   @Post()
   @Security("api_key")
   public async createUser(
-    @Body() requestBody: AccountCreationParams
-  ): Promise<void> {
+    @Body() requestBody: any,
+    @Request() request: any
+  ): Promise<User> {
+    console.log(request.user)
     this.setStatus(201); // set return status 201
-    this.usersService.create(requestBody);
-    return;
+    return this.usersService.create(requestBody);
   }
 }
 

@@ -4,7 +4,7 @@ import { Account, PlatformEnum } from "../dto/output/account.dto.js";
 import { Channel } from "../dto/output/channel.dto.js";
 import { Community } from "../dto/output/community.dto.js";
 
-export type AccountCreationParams = Pick<Account, "id" | "type" | "pseudo" | "image">;
+export type AccountCreationParams = Pick<Account, "id" | "type" | "pseudo" >;
     
 const exampleAccount : Account = {id: "uid-123456", type: PlatformEnum.DISCORD, pseudo: "JOHN CENNA PAPALAPA", xp: 524, primary: true, activated: true, createdAt: new Date(), updatedAt: new Date()}
 

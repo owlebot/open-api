@@ -96,32 +96,6 @@
 				],
 				"type": "object",
 				"additionalProperties": false
-			},
-			"Pick_Account.id-or-type-or-pseudo-or-image_": {
-				"properties": {
-					"id": {
-						"type": "string"
-					},
-					"type": {
-						"$ref": "#/components/schemas/PlatformEnum"
-					},
-					"pseudo": {
-						"type": "string"
-					},
-					"image": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"id",
-					"type",
-					"pseudo"
-				],
-				"type": "object",
-				"description": "From T, pick a set of properties whose keys are in the union K"
-			},
-			"AccountCreationParams": {
-				"$ref": "#/components/schemas/Pick_Account.id-or-type-or-pseudo-or-image_"
 			}
 		},
 		"securitySchemes": {
@@ -176,7 +150,14 @@
 				"operationId": "CreateUser",
 				"responses": {
 					"201": {
-						"description": "User created"
+						"description": "User created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						}
 					}
 				},
 				"security": [
@@ -189,9 +170,7 @@
 					"required": true,
 					"content": {
 						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/AccountCreationParams"
-							}
+							"schema": {}
 						}
 					}
 				}

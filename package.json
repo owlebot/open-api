@@ -14,7 +14,11 @@
 	"dependencies": {
 		"@owlebot/lib": "^0.4.0",
 		"@owlebot/logger": "^0.4.0",
+		"@ungap/url-search-params": "^0.2.2",
+		"@unkey/api": "^0.11.0",
+		"axios": "^1.6.0",
 		"fern-api": "^0.14.3",
+		"node-cache": "^5.1.2",
 		"swagger-ui-express": "^5.0.0",
 		"tsoa": "^5.1.1"
 	},
@@ -33,10 +37,10 @@
 	"scripts": {
 		"lint": "eslint src/**/*.ts",
 		"clean": "rm -rf build spec",
-		"build": "yarn build:tsoa && yarn build:ts && build:fern",
+		"build": "yarn build:tsoa && yarn build:ts && yarn build:fern",
 		"build:ts": "tsc --experimentalDecorators",
 		"build:tsoa": "yarn run tsoa spec-and-routes",
-		"build:fern": "rm -rf fern generated && fern init --openapi spec/tsoa/swagger.json && fern generate",
+		"build:fern": "rm -rf generated && cp spec/tsoa/swagger.json fern/api/openapi/swagger.json && fern generate",
 		"dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
 		"deploy": "deploy",
 		"docker:build": "docker-build",
