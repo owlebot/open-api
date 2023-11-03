@@ -33,9 +33,10 @@
 	"scripts": {
 		"lint": "eslint src/**/*.ts",
 		"clean": "rm -rf build spec",
-		"build": "yarn build:tsoa && yarn build:ts",
+		"build": "yarn build:tsoa && yarn build:ts && build:fern",
 		"build:ts": "tsc --experimentalDecorators",
 		"build:tsoa": "yarn run tsoa spec-and-routes",
+		"build:fern": "rm -rf fern generated && fern init --openapi spec/tsoa/swagger.json && fern generate",
 		"dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
 		"deploy": "deploy",
 		"docker:build": "docker-build",
