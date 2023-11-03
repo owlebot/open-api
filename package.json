@@ -12,14 +12,14 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@owlebot/lib": "^0.2.0",
-		"@owlebot/logger": "^0.2.0",
+		"@owlebot/lib": "^0.4.0",
+		"@owlebot/logger": "^0.4.0",
 		"fern-api": "^0.14.3",
 		"swagger-ui-express": "^5.0.0",
 		"tsoa": "^5.1.1"
 	},
 	"devDependencies": {
-		"@owlebot/cli": "^0.5.0",
+		"@owlebot/cli": "^0.6.0",
 		"@owlebot/eslint-config": "^1.0.0",
 		"@types/express": "^4.17.17",
 		"@types/node": "^20.6.0",
@@ -44,7 +44,7 @@
 		"secret:pull": "secret-pull",
 		"start:debug": "launch src/index.js --inspect",
 		"start:prod": "node src/index.js",
-		"start:watch": "launch src/index.js --watch",
+		"start:watch": "NODE-OPTIONS='--watch' ts-node --esm --swc build/src/index.js",
 		"start": "launch build/src/index.js",
 		"test": "yarn run lint"
 	},
