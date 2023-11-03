@@ -7,11 +7,19 @@
     "host": "localhost:3000",
     "basePath": "v1",
     "yaml": false,
-    "specVersion": 3
+    "specVersion": 3,
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "access_token",
+            "in": "header"
+        }
+    }
   },
   "routes": {
     "esm": true,
     "basePath": "v1",
-    "routesDir": "build"
+    "routesDir": "build",
+    "authenticationModule": "src/index.ts"
   }
 }

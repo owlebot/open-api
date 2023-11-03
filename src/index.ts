@@ -19,6 +19,33 @@ server.init();
 server.addLogger(Logger);
 // server.addHealthEndpoint();
 
+//Middleware authentication
+export function expressAuthentication(
+  request: express.Request,
+  securityName: string,
+  scopes?: string[]
+): Promise<any> {
+  if (securityName === "api_key") {
+    let token;
+    if (request.query && request.headers["X-Access-Token"]) {
+      token = request.headers["X-Access-Token"];
+    }
+
+    if (token === "TEDDY") {
+      return Promise.resolve({
+        id: 1,
+      });
+    } else if (token === "JOHN"){
+      return Promise.resolve({
+        id: 2,
+      });
+    } else {
+      return Promise.reject({});
+    }
+  } else {
+    return Promise.reject({});
+  }
+}
 
 const router = server.addRouter();
 

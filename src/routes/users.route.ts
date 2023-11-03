@@ -8,6 +8,7 @@ import {
   Query,
   Route,
   SuccessResponse,
+  Security,
 } from "tsoa";
 import { User } from "../dto/output/user.dto.js";
 
@@ -26,6 +27,7 @@ export class UsersController extends Controller {
 
   @SuccessResponse("201", "User created") // Custom success response
   @Post()
+  @Security("api_key")
   public async createUser(
     @Body() requestBody: AccountCreationParams
   ): Promise<void> {
