@@ -18,7 +18,7 @@ jobs:
       SSH_GITHUB_KEY: ${{ secrets.SSH_GITHUB_KEY }}
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.name != 'main'
+    if: github.event.repository.name != 'main' && github.event.repository.name != 'template-service'
     needs: [test]
     steps:
       - name: Login to GitLab
@@ -38,7 +38,7 @@ jobs:
       matrix:
         node-version: [18.x]
     runs-on: ubuntu-latest
-    if: github.event.repository.name != 'main'
+    if: github.event.repository.name != 'main' && github.event.repository.name != 'template-service'
     needs: [test, build]
     steps:
       - uses: actions/checkout@v3
@@ -46,6 +46,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        continue-on-error: true
+        with:
+          known_hosts: unnecessary
+          key: ${{ secrets.SSH_GITHUB_KEY }}
       - name: Setup Helm
         uses: azure/setup-helm@v3
         with:
