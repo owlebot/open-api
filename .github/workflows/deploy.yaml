@@ -33,32 +33,32 @@ jobs:
           tags: registry.gitlab.com/owlebot/docker-registry/${{ github.event.repository.name }}:latest
           push: true
           no-cache: true
-  # deploy:
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
-  #   runs-on: ubuntu-latest
-  #   if: github.event.repository.name != 'main'
-  #   needs: [test, build]
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #     - name: Setup Helm
-  #       uses: azure/setup-helm@v3
-  #       with:
-  #         version: v3.12.0
-  #     - name: Login to Digital Ocean
-  #       uses: digitalocean/action-doctl@v2
-  #       with:
-  #         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-  #     - name: Setup kubeconfig
-  #       run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 29016237-ff37-48f0-9082-48059a81a12d
-  #     - name: Install dependencies
-  #       run: yarn install --network-concurrency 1
-  #       env:
-  #         CI: true
-  #     - name: Deploy to cluster
-  #       run: yarn deploy
+  deploy:
+    strategy:
+      matrix:
+        node-version: [18.x]
+    runs-on: ubuntu-latest
+    if: github.event.repository.name != 'main'
+    needs: [test, build]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.0
+      - name: Login to Digital Ocean
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Setup kubeconfig
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 29016237-ff37-48f0-9082-48059a81a12d
+      - name: Install dependencies
+        run: yarn install --network-concurrency 1
+        env:
+          CI: true
+      - name: Deploy to cluster
+        run: yarn deploy --env production
