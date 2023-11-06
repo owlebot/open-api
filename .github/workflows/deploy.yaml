@@ -67,4 +67,4 @@ jobs:
         env:
           CI: true
       - name: Deploy to cluster
-        run: yarn deploy --env production
+        run: yarn deploy --env production --version ${{ github.sha }}
