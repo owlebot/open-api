@@ -408,10 +408,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@owlebot/cli@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@owlebot/cli/-/cli-0.7.4.tgz#96c15ccad922ac20c7807789b605ae99501e0a24"
-  integrity sha512-9oIAUMo08eN3omPxoxC566GADP75dXLQpWFTJKfRTFZ7mSot1OBJnuFsRxmF9BkbgdKP8LMyj8thHYB3SAaJjw==
+"@owlebot/cli@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@owlebot/cli/-/cli-0.8.0.tgz#62787a03f7550c877140bb3ad269b4893fab0d6e"
+  integrity sha512-pElcSniCXH6QK9E9F5ZQSNjJK1MZq7jrYPRTvw8v/DW6OS/JWC52pUJXaYgVmmWTWDpPAb+RisxFO3w8klrzSQ==
   dependencies:
     dotenv "^16.0.2"
 
