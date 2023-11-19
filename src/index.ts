@@ -8,8 +8,8 @@ import { verifyKey } from '@unkey/api';
 
 // ...
 
-import packageJson from "../package.json" assert { type: 'json' };
-import swaggerApi from "../spec/tsoa/swagger.json" assert { type: 'json' };
+import packageJson from "../package.json" assert { type: "json" };
+import swaggerApi from "../spec/tsoa/swagger.json" assert { type: "json" };
 
 import { RegisterRoutes } from "../build/routes.js";
 
