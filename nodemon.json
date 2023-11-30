@@ -1,5 +1,0 @@
-{
-  "exec": "ts-node build/src/index.js",
-  "watch": ["src"],
-  "ext": "ts"
-}

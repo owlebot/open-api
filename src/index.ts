@@ -20,6 +20,7 @@ server.init(process.env.OPEN_API_PORT);
 server.addLogger(Logger);
 // server.addHealthEndpoint();
 
+console.log("a")
 // Cache
 const cache = new NodeCache({ stdTTL: 10800 }); // Cache for 3 hours 
 

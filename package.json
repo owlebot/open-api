@@ -30,7 +30,6 @@
 		"@types/swagger-ui-express": "^4.1.3",
 		"concurrently": "^8.2.1",
 		"eslint": "^8.54.0",
-		"nodemon": "^3.0.1",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2"
 	},
@@ -46,10 +45,10 @@
 		"docker:build": "docker-build",
 		"docker:push": "docker-push",
 		"secret:pull": "secret-pull",
-		"start:debug": "launch src/index.js --inspect",
-		"start:prod": "node src/index.js",
-		"start:watch": "NODE-OPTIONS='--watch' ts-node --esm --swc build/src/index.js",
-		"start": "launch build/src/index.js",
+		"start:debug": "node --loader ./loader.mjs --watch ./src/index.ts --inspect",
+		"start:prod": "node build/src/index.js",
+		"start:watch": "node --loader ./loader.mjs --watch ./src/index.ts",
+		"start": "ts-node --esm ./src/index.ts",
 		"test": "yarn run lint"
 	},
 	"repository": {

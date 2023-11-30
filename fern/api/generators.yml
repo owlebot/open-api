@@ -6,4 +6,9 @@ groups:
         version: 0.7.2
         output:
           location: local-file-system
-          path: ../../generated/typescript
+          path: ../../packages/typescript
+        config: 
+          namespaceExport: owlebot
+          timeoutInSeconds: 120
+          noSerdeLayer: true
+          outputEsm: true
