@@ -1,9 +1,15 @@
   {
     "compilerOptions": {
       "incremental": true,
-      "target": "es6",
-      "module": "esnext",
+      "target": "ESNext",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
       "outDir": "build",
+      "baseUrl": ".",
+      
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
 
       "strict": true,
       "noImplicitAny": true,
@@ -13,18 +19,10 @@
       "strictPropertyInitialization": true,
       "noImplicitThis": true,
       "alwaysStrict": true,
-
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
-
-      "moduleResolution": "node10",
-      "baseUrl": ".",
-      "esModuleInterop": true,
-
-      "experimentalDecorators": true,
-
       "forceConsistentCasingInFileNames": true,
-      "resolveJsonModule": true
+
     },
     "include": [
       "**/*",
@@ -33,10 +31,9 @@
     "exclude": [
       "node_modules",
       "build",
-      "test",
-      "testing",
-      "scripts",
-      "examples",
-      "docs"
+      "k8s",
+      "spec",
+      "generated",
+      "packages",
     ]
   }

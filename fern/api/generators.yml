@@ -1,4 +1,5 @@
 default-group: local
+openapi: ../spec/openapi.yml
 groups:
   local:
     generators:
