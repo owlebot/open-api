@@ -1,0 +1,29 @@
+{
+	"name": "@owlebot/open-api",
+	"version": "0.1.0",
+	"description": "Owlebot open API.",
+	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
+	"link": "https://github.com/owlebot/open-api",
+	"main": "./src/index.js",
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=20.9.0"
+	},
+	"private": false,
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/owlebot/open-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/owlebot/open-api/issues"
+	},
+	"homepage": "https://github.com/owlebot/open-api#readme",
+	"keywords": []
+}
