@@ -1,19 +1,20 @@
 {
-  "entryFile": "src/index.ts",
+  "entryFile": "./src/index.ts",
   "noImplicitAdditionalProperties": "throw-on-extras",
   "controllerPathGlobs": ["src/**/*.route.ts"],
   "spec": {
-    "outputDirectory": "spec/tsoa",
     "host": "localhost:3000",
     "basePath": "v1",
+    "outputDirectory": "./specs",
+    "specFileBaseName": "openapi",
     "yaml": false,
     "specVersion": 3,
     "securityDefinitions": {
-        "api_key": {
-            "type": "apiKey",
-            "name": "access_token",
-            "in": "header"
-        }
+      "api_key": {
+          "type": "apiKey",
+          "name": "access_token",
+          "in": "header"
+      }
     }
   },
   "routes": {

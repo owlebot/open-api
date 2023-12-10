@@ -1,5 +1,5 @@
 default-group: local
-openapi: ../spec/openapi.yml
+openapi: ../openapi.json
 groups:
   local:
     generators:
@@ -7,7 +7,7 @@ groups:
         version: 0.7.2
         output:
           location: local-file-system
-          path: ../../packages/typescript
+          path: ../../packages/typescript/src
         config: 
           namespaceExport: owlebot
           timeoutInSeconds: 120

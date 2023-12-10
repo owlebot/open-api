@@ -6,21 +6,17 @@ import swaggerUi from "swagger-ui-express";
 import NodeCache from 'node-cache';
 import { verifyKey } from '@unkey/api';
 
-// ...
-
 import packageJson from "../package.json" assert { type: "json" };
-import swaggerApi from "../spec/tsoa/swagger.json" assert { type: "json" };
+import swaggerApi from "../specs/openapi.json" assert { type: "json" };
 
 import { RegisterRoutes } from "../build/routes.js";
 
-// Logger.create(packageJson.name);
-Logger.create("open-api");
+Logger.create(packageJson.name);
 const server = new Server();
 server.init(process.env.OPEN_API_PORT);
 server.addLogger(Logger);
 // server.addHealthEndpoint();
 
-console.log("a")
 // Cache
 const cache = new NodeCache({ stdTTL: 10800 }); // Cache for 3 hours 
 

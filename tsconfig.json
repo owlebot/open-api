@@ -31,9 +31,8 @@
     "exclude": [
       "node_modules",
       "build",
-      "k8s",
-      "spec",
-      "generated",
       "packages",
+      "specs",
+      "k8s",
     ]
   }

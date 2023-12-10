@@ -1,11 +1,10 @@
 secret.json
 
-# build fern
-generated
-
-# ts things
-spec/
+# build
 build/
+
+# fern packages
+packages/typescript/src
 
 # Logs
 logs
