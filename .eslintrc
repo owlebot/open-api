@@ -9,9 +9,29 @@
 			"rules": {
 				"no-magic-numbers": "off",
 				"new-cap": "off",
+				"no-shadow": [
+					"warn",
+					{
+						"builtinGlobals": true,
+						"hoist": "functions",
+						"allow": [
+							"module",
+							"cd",
+							"resolve",
+							"reject",
+							"done",
+							"cb",
+							"callback",
+							"Request"
+						]
+					}
+				],
 				"import/extensions": [
 					"error",
-					"always"
+					"always",
+					{
+						"ignorePackages": true
+					}
 				],
 				"indent": "off",
 				"@typescript-eslint/indent": [
