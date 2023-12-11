@@ -3,16 +3,17 @@
   "noImplicitAdditionalProperties": "throw-on-extras",
   "controllerPathGlobs": ["src/**/*.route.ts"],
   "spec": {
-    "host": "localhost:3000",
+    "host": "localhost:3001",
     "basePath": "v1",
     "outputDirectory": "./specs",
     "specFileBaseName": "openapi",
     "yaml": false,
     "specVersion": 3,
+    "schemes": [ "http", "https" ],
     "securityDefinitions": {
       "api_key": {
           "type": "apiKey",
-          "name": "access_token",
+          "name": "X-Access-Token",
           "in": "header"
       }
     }
@@ -21,6 +22,6 @@
     "esm": true,
     "basePath": "v1",
     "routesDir": "build",
-    "authenticationModule": "src/index.ts"
+    "authenticationModule": "./src/middlewares/middleware-auth.ts"
   }
 }

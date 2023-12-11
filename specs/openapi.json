@@ -6,55 +6,31 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
-			"PlatformEnum": {
-				"enum": [
-					"discord",
-					"twitch"
-				],
-				"type": "string"
-			},
-			"Account": {
+			"Community": {
 				"properties": {
 					"id": {
 						"type": "string"
 					},
-					"type": {
-						"$ref": "#/components/schemas/PlatformEnum"
+					"ownerId": {
+						"type": "string"
 					},
-					"pseudo": {
+					"name": {
 						"type": "string"
 					},
 					"image": {
 						"type": "string"
 					},
-					"xp": {
+					"description": {
+						"type": "string"
+					},
+					"members": {
 						"type": "number",
 						"format": "double"
-					},
-					"primary": {
-						"type": "boolean"
-					},
-					"activated": {
-						"type": "boolean"
-					},
-					"createdAt": {
-						"type": "string",
-						"format": "date-time"
-					},
-					"updatedAt": {
-						"type": "string",
-						"format": "date-time"
 					}
 				},
 				"required": [
 					"id",
-					"type",
-					"pseudo",
-					"xp",
-					"primary",
-					"activated",
-					"createdAt",
-					"updatedAt"
+					"ownerId"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -64,35 +40,16 @@
 					"id": {
 						"type": "string"
 					},
-					"accounts": {
+					"communities": {
 						"items": {
-							"$ref": "#/components/schemas/Account"
+							"$ref": "#/components/schemas/Community"
 						},
 						"type": "array"
-					},
-					"premium": {
-						"type": "boolean"
-					},
-					"money": {
-						"type": "number",
-						"format": "double"
-					},
-					"createdAt": {
-						"type": "string",
-						"format": "date-time"
-					},
-					"updatedAt": {
-						"type": "string",
-						"format": "date-time"
 					}
 				},
 				"required": [
 					"id",
-					"accounts",
-					"premium",
-					"money",
-					"createdAt",
-					"updatedAt"
+					"communities"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -101,7 +58,7 @@
 		"securitySchemes": {
 			"api_key": {
 				"type": "apiKey",
-				"name": "access_token",
+				"name": "X-Access-Token",
 				"in": "header"
 			}
 		}
@@ -117,44 +74,21 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
-		"/users/{userId}": {
+		"/accounts/{accountId}/user/communities": {
 			"get": {
-				"operationId": "GetUser",
+				"operationId": "GetUserCommunities",
 				"responses": {
 					"200": {
 						"description": "Ok",
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/User"
-								}
-							}
-						}
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "userId",
-						"required": true,
-						"schema": {
-							"type": "string"
-						}
-					}
-				]
-			}
-		},
-		"/users": {
-			"post": {
-				"operationId": "CreateUser",
-				"responses": {
-					"201": {
-						"description": "User created",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/User"
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/User"
+										}
+									],
+									"nullable": true
 								}
 							}
 						}
@@ -165,21 +99,22 @@
 						"api_key": []
 					}
 				],
-				"parameters": [],
-				"requestBody": {
-					"required": true,
-					"content": {
-						"application/json": {
-							"schema": {}
+				"parameters": [
+					{
+						"in": "path",
+						"name": "accountId",
+						"required": true,
+						"schema": {
+							"type": "string"
 						}
 					}
-				}
+				]
 			}
 		}
 	},
 	"servers": [
 		{
-			"url": "https://localhost:3000/v1"
+			"url": "http://localhost:3001/v1"
 		}
 	]
 }
