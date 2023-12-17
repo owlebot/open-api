@@ -1,4 +1,3 @@
-import { OPEN_API } from "@owlebot/lib/endpoints";
 import {
 	Controller,
 	Get,
@@ -10,12 +9,12 @@ import {
 
 import { User } from "../dto/output/user.dto.js";
 import { UsersService } from "../services/users.service.js";
-
-@Route(OPEN_API.ACCOUNTS.router() )
+  
+@Route("accounts")
 export class AccountsController extends Controller {
 	usersService = new UsersService();
 
-	@Get(OPEN_API.ACCOUNTS._.USER.COMMUNITIES.def("{accountId}") )
+	@Get("{accountId}/user/communities")
 	@Security("api_key")
 	public async getUserCommunities(
 		@Request() req: Request,
