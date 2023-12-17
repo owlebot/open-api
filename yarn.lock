@@ -465,10 +465,10 @@
     eslint-plugin-json "^3.1.0"
     eslint-plugin-simple-import-sort "^10.0.0"
 
-"@owlebot/lib@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@owlebot/lib/-/lib-0.7.1.tgz#de4c6ca4a3a3d44744cf287b3ad76e96ab02dc19"
-  integrity sha512-zAJPAUAODHnw4Geivc1M/YOTWPyg2qmaxf4LC1hrOncxxmJE7ei5P9FQD8y5B7AK/m8aG5+mf7GQPV3BDFRuwQ==
+"@owlebot/lib@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@owlebot/lib/-/lib-0.8.0.tgz#fcd42498aa8cf2f8d59a2fe75f7dce58ad9bf72e"
+  integrity sha512-j2RLJ9IlayTZG04ZprsI7Vy5aH7q3OMgQQlrl69MijUtnuh0zh5pAdfmkNqH8Qt5fVsmPxv3eeohP2HKxMM3wA==
   dependencies:
     amqplib "^0.10.3"
     express "5.0.0-beta.1"

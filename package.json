@@ -12,7 +12,7 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@owlebot/lib": "^0.7.1",
+		"@owlebot/lib": "^0.8.0",
 		"@owlebot/logger": "^0.4.0",
 		"@unkey/api": "^0.13.0",
 		"fern-api": "^0.16.1",
