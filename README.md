@@ -1,6 +1,7 @@
-# template
+# open-api
 
-Template repo for future node projects
+API to interact with the owlebot system.  
+To access the API and start using it, join our discord server and ask for a token.  
 
 ## Setup
 
