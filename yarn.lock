@@ -446,10 +446,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@owlebot/cli@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@owlebot/cli/-/cli-0.9.0.tgz#5517349ded11842f7f01593492302c289ef2a8f8"
-  integrity sha512-t2KbQjXbUewDUkFM0qoixeGeT1eVRkYyjMHJtLcPuCVPDQhKknNnceP7TZnamB7QlvyfZku3tA3gzx6DaYGGtg==
+"@owlebot/cli@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@owlebot/cli/-/cli-0.10.0.tgz#8553b2872ce28d188bcd3f90130e397428985c05"
+  integrity sha512-oNRw0sAri7HANsRIhNy1QJdzTSigwSbGxLpaCDKWeyIA1Vhf8GgzaOkTFcA6oLWM9ES0Nq9LyJZWV+zPgefiLA==
   dependencies:
     dotenv "^16.0.2"
 
@@ -465,10 +465,10 @@
     eslint-plugin-json "^3.1.0"
     eslint-plugin-simple-import-sort "^10.0.0"
 
-"@owlebot/lib@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@owlebot/lib/-/lib-0.8.0.tgz#fcd42498aa8cf2f8d59a2fe75f7dce58ad9bf72e"
-  integrity sha512-j2RLJ9IlayTZG04ZprsI7Vy5aH7q3OMgQQlrl69MijUtnuh0zh5pAdfmkNqH8Qt5fVsmPxv3eeohP2HKxMM3wA==
+"@owlebot/lib@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@owlebot/lib/-/lib-0.9.0.tgz#8bd755aeb0210ceaff95c4bb23bf1ddc18e84cb4"
+  integrity sha512-lNUpXwnsuGZCwUMjXQWzaJkTSicWEZDZY+SkrrwXxG7K6isxk68MZvf8B3qR/GDhnwHNiiHxwxsqopkBf/C0lQ==
   dependencies:
     amqplib "^0.10.3"
     express "5.0.0-beta.1"
@@ -477,10 +477,10 @@
     swagger-ui-express "^4.6.2"
     uuid "^9.0.0"
 
-"@owlebot/logger@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@owlebot/logger/-/logger-0.4.0.tgz#d3d2494aa2ed9baf060bb6d3bde597677d486ed3"
-  integrity sha512-3qAhDL3+EKunmHPPVB95wekTFTuIpVIgSRvigwC/HMe7lgGQyqBH+Ae6wkLLPVcryOgSx7okx32+zJ8B/s4IKQ==
+"@owlebot/logger@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@owlebot/logger/-/logger-0.4.1.tgz#97038c52833da7864c9ad7c6e4fe6e9fdff78871"
+  integrity sha512-ZTejwyho3dcjH5YClb4gvAhulEQ+NP95QGFBfAXg7dKwPd420dMou9Ap0MuV5RvGsVObrtbU0bJdLeeFbYINuQ==
   dependencies:
     winston "^3.8.2"
 

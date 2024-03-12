@@ -12,15 +12,15 @@
 	},
 	"private": true,
 	"dependencies": {
-		"@owlebot/lib": "^0.8.0",
-		"@owlebot/logger": "^0.4.0",
+		"@owlebot/lib": "^0.9.0",
+		"@owlebot/logger": "^0.4.1",
 		"@unkey/api": "^0.13.0",
 		"fern-api": "^0.16.1",
 		"swagger-ui-express": "^5.0.0",
 		"tsoa": "^5.1.1"
 	},
 	"devDependencies": {
-		"@owlebot/cli": "^0.9.0",
+		"@owlebot/cli": "^0.10.0",
 		"@owlebot/eslint-config": "^1.2.0",
 		"@types/express": "^4.17.17",
 		"@types/node": "^20.6.0",
