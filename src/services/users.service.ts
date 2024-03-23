@@ -33,13 +33,15 @@ export class UsersService {
 
 		return {
 			id: user.data.id,
-			communities: communities.data.map( (e: Community) => {
+			communities: communities.data.filter( (e: Community) => !e.private).map( (e: Community) => {
 				return {
 					id: e.id,
 					ownerId: e.ownerId,
-					name: "REDACTED",
-					description: "REDACTED",
-					image: "REDACTED",
+					premium: e.premium,
+					name: e.name,
+					description: e.description,
+					longDescription: e.longDescription,
+					image: e.image,
 					members: e.members,
 				};
 			} ),
