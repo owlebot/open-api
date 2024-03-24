@@ -27,7 +27,11 @@ export class UsersService {
 			const members = await this.#profile.get(PROFILE.COMMUNITIES._.MEMBERS.resolve(community.id), context);
 			
 			if (members.ok && members.data) {
-				community.members = Math.max(...Object.values(members.data) as number[] );
+				// remove total number because we only want platform members
+				delete members.data.total;
+				
+				const platformMembers = Object.values(members.data);
+				community.members = Math.max(...platformMembers as number[] );
 			}
 		}
 
